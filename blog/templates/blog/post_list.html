@@ -7,16 +7,12 @@
             <h1><a href="/">Django test page</a></h1>
         </div>
         
+        {% for post in posts %}
         <div>
-            <p>published:2020/04/19</p>
-            <h2><a href="">My first post</a></h2>
-            <p>こんにちはよろしくおねがいします！</p>
+            <p>published:{{post.published_date}}</p>
+            <h2><a href="">{{post.title}}</a></h2>
+            <p>{{post.test|linebreaksbr}}</p>
         </div>
-
-        <div>
-            <p>公開日:2020/04/19</p>
-            <h2><a href="">Second Blog</a></h2>
-            <p>こんにちはよろしくおねがいします！2</p>
-        </div>
+        {% endfor %}
     </body>
 </html>
